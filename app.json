@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/user/index",
+    "pages/goods_list/index",
+    "pages/goods_detail/index",
+    "pages/collect/index",
+    "pages/order/index",
+    "pages/search/index",
+    "pages/feedback/index",
+    "pages/login/index",
+    "pages/auth/index",
+    "pages/pay/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#EA4350",
+    "navigationBarTitleText": "Mall",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color":"#666",
+    "backgroundColor":"#FAFAFA",
+    "selectedColor":"#E03440",
+    "list": [
+      {
+        "iconPath":"images/iconfont/home.png",
+        "selectedIconPath":"images/iconfont/home-1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath":"images/iconfont/category.png",
+        "selectedIconPath":"images/iconfont/category-1.png",
+        "pagePath": "pages/category/index",
+        "text": "分类"
+      },
+      {
+        "iconPath":"images/iconfont/cart.png",
+        "selectedIconPath":"images/iconfont/cart-1.png",
+        "pagePath": "pages/cart/index",
+        "text": "购物车"
+      },
+      {
+        "iconPath":"images/iconfont/user.png",
+        "selectedIconPath":"images/iconfont/user-1.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
