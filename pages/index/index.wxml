@@ -1,2 +1,2 @@
-<!--pages/index/index.wxml-->
-<text class="iconfont iconshoucang">pages/index/index.wxml</text>
+
+<search />

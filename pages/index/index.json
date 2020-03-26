@@ -1,6 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "search":"/components/search/index"
+  },
   "enablePullDownRefresh": true,
-  "navigationBarTitleText":"Mall"
+  "navigationBarTitleText":"uBuy"
   
 }
