@@ -10,9 +10,21 @@
     indicator-active-color="#fff"
     interval="3000" 
     >  
-    <swiper-item class="swiper_item">
-        <image class="Slide" src="https://api-hmugo-web.itheima.net/pyg/banner1.png" mode="aspectFit"/>    
+    <swiper-item wx:for="{{ swiperList }}" wx:key="goods_id" class="swiper_item">
+        <navigator url="{{item.navigator_url}}"open-type="item.open-type">
+            <image class="Slide" src="{{item.image_src}}" mode="aspectFit"/>  
+        </navigator>  
     </swiper-item>
       
 </swiper>
+<!-- 首页导航 -->
+<view class="nav">
+    <navigator wx:for="{{ 4 }}" wx::key="key" hover-class="none" url="" open-type="navigate">
+        <image class="nav_image" src="https://api-hmugo-web.itheima.net/pyg/icon_index_nav_4@2x.png" mode="aspectFit" />     
+    </navigator>   
+</view>
+
+  
+  
+
   

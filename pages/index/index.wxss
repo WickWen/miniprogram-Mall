@@ -6,3 +6,17 @@
   height: 340rpx;
   width: 100%;
 }
+.nav {
+  display: flex;
+  padding: 12rpx;
+}
+.nav navigator {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav_image {
+  width: 128rpx;
+  height: 140rpx;
+}

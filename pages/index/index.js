@@ -5,13 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    swiperList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // $.axios()
+    wx.request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
+      method: 'GET',
+      dataType: 'json',
+      success: (result) => {
+        console.log(result.data.message);
+        // 更新页面数据
+        this.setData({
+          swiperList:result.data.message
+        })
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+      
 
   },
 
