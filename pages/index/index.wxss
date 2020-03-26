@@ -1,1 +1,8 @@
-/* pages/index/index.wxss */
+.index_swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.index_swiper .Slide {
+  height: 340rpx;
+  width: 100%;
+}

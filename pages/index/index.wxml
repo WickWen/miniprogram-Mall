@@ -1,2 +1,18 @@
-
+<!-- 搜索框 -->
 <search />
+<!-- 轮播图 -->
+<swiper
+    class="index_swiper" 
+    circular
+    autoplay
+    indicator-dots
+    indicator-color="rgba(255,255,255,.3)" 
+    indicator-active-color="#fff"
+    interval="3000" 
+    >  
+    <swiper-item class="swiper_item">
+        <image class="Slide" src="https://api-hmugo-web.itheima.net/pyg/banner1.png" mode="aspectFit"/>    
+    </swiper-item>
+      
+</swiper>
+  
