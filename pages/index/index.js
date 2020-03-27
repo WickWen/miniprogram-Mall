@@ -64,6 +64,25 @@ Page({
 
   },
 
+  // 首页楼层图片点击跳转到列表页
+  goToPageList(e){
+    // console.log(e.currentTarget);
+    let { url, type } = e.currentTarget.dataset;
+    
+    const urlArr = url.split('?')   /* 切割字符串 */
+    urlArr.splice(1, 0, '/index?');  /* 拼接字符串 改变原数组 */
+    console.log(urlArr);
+    
+    // console.log(url, type);
+    if (type === "navigate") {
+      wx.navigateTo({
+        // 用于跳转到应用内的某个页面
+        url: urlArr.join('')  
+      });
+         
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

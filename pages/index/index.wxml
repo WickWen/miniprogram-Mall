@@ -48,6 +48,9 @@
         wx:for-item="item2" 
         src="{{item2.image_src}}" 
         style="width:{{ item2.image_width }}rpx"
+        bindtap="goToPageList"
+        data-url="{{ item2.navigator_url }}"
+        data-type="{{ item2.open_type }}"
         />         
     </view>
       
