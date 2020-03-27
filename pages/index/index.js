@@ -40,8 +40,15 @@ Page({
       url:'/home/floordata',
     }).then(res => {
       // console.log(res);
+      const newRes = res.map((item, index) => {
+        return {
+          id: index,  /* 造一个唯一标识 */
+          floor_title: item.floor_title,
+          product_list: item.product_list
+        }
+      })
       this.setData({
-        floorList:res
+        floorList:newRes
       });
 
     })
@@ -69,9 +76,10 @@ Page({
     // console.log(e.currentTarget);
     let { url, type } = e.currentTarget.dataset;
     
+    // const urlArr = url.replace(/\?/,'/index?')
     const urlArr = url.split('?')   /* 切割字符串 */
     urlArr.splice(1, 0, '/index?');  /* 拼接字符串 改变原数组 */
-    console.log(urlArr);
+    // console.log(urlArr);
     
     // console.log(url, type);
     if (type === "navigate") {

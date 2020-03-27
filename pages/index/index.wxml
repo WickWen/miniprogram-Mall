@@ -44,7 +44,7 @@
         <image 
         class="wrap_image"
         wx:for="{{ item.product_list }}" 
-        wx:key="name"
+        wx:key="id"
         wx:for-item="item2" 
         src="{{item2.image_src}}" 
         style="width:{{ item2.image_width }}rpx"
