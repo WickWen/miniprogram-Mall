@@ -57,6 +57,8 @@
       
     
 </view>
+<!-- 返回顶部组件 -->
+<pageScrollTo></pageScrollTo>
   
 
 

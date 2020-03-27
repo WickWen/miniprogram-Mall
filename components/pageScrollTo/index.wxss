@@ -1,0 +1,16 @@
+.toTop{
+    width: 81rpx;
+    height: 81rpx;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #e1251b;
+    opacity: 0.8;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20rpx;
+    bottom: 20rpx;
+
+}

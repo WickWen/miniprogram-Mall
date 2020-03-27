@@ -1,0 +1,4 @@
+<view class="toTop" bindtap="toTop">
+    顶部
+</view>
+  
