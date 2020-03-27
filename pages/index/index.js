@@ -6,20 +6,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperList:[]
+    swiperList: [],
+    navList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 轮播图
     axios({
       url:'/home/swiperdata',
     }).then(res => {
       // console.log(res);
       this.setData({
         swiperList:res
+      });
+
+    }),
+    // 导航
+    axios({
+      url:'/home/catitems',
+    }).then(res => {
+      // console.log(res);
+      this.setData({
+        navList:res
       });
 
     })

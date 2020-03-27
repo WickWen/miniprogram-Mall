@@ -19,8 +19,14 @@
 </swiper>
 <!-- 首页导航 -->
 <view class="nav">
-    <navigator wx:for="{{ 4 }}" wx::key="key" hover-class="none" url="" open-type="navigate">
-        <image class="nav_image" src="https://api-hmugo-web.itheima.net/pyg/icon_index_nav_4@2x.png" mode="aspectFit" />     
+    <navigator 
+        wx:for="{{ navList }}" 
+        wx:key="name" 
+        hover-class="none" 
+        url="{{item.navigator_url || '/pages/search/index?query + item.name'}}" 
+        open-type="{{item.open_type || 'navigator'}}"
+        >
+            <image class="nav_image" src="{{item.image_src}}" mode="aspectFit" />     
     </navigator>   
 </view>
 
