@@ -6,7 +6,7 @@
         height: 340rpx;
         width: 100%;
     }
-}
+};
 // 导航
 .nav{
     display: flex;
@@ -21,5 +21,27 @@
         width: 128rpx;
         height: 140rpx;
     }
+};
+// 楼层
+.floor{
+    &_title{
+        background-color: #fff;
+        .title_image{
+            width: 750rpx;
+            height: 60rpx;
+        }
+    }
+    &_wrap{
+        .wrap_image{
+            float: left;
+            width: 233rpx;
+            height: 188rpx;
+            margin: 0 0 10rpx 15rpx;
+            &:nth-child(1){
+                width: 232rpx;
+                height: 386rpx;
+            }
 
+        }
+    }
 }

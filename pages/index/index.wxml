@@ -23,12 +23,30 @@
         wx:for="{{ navList }}" 
         wx:key="name" 
         hover-class="none" 
-        url="{{item.navigator_url || '/pages/search/index?query + item.name'}}" 
+        url="{{item.navigator_url || '/pages/search/index?query=' + item.name}}" 
         open-type="{{item.open_type || 'navigator'}}"
         >
             <image class="nav_image" src="{{item.image_src}}" mode="aspectFit" />     
     </navigator>   
 </view>
+
+<!-- 楼层 -->
+<view class="floor">
+    <view class="floor_title">
+        <image class="title_image" src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_title.png" mode="aspectFit" />
+    
+    </view>
+
+    <view class="floor_wrap">
+        <image wx:for="{{ 5 }}" class="wrap_image" src="" />
+          
+    </view>
+      
+      
+    
+</view>
+  
+
 
   
   
