@@ -7,7 +7,8 @@ Page({
    */
   data: {
     swiperList: [],
-    navList:[]
+    navList: [],
+    floorList:[]
   },
 
   /**
@@ -31,6 +32,16 @@ Page({
       // console.log(res);
       this.setData({
         navList:res
+      });
+
+    }),
+    // 楼层图片
+    axios({
+      url:'/home/floordata',
+    }).then(res => {
+      // console.log(res);
+      this.setData({
+        floorList:res
       });
 
     })

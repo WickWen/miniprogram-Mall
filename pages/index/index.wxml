@@ -31,15 +31,24 @@
 </view>
 
 <!-- 楼层 -->
-<view class="floor">
+<view 
+    wx:for="{{floorList}}" 
+    wx:key="floor_title"
+    class="floor">
     <view class="floor_title">
-        <image class="title_image" src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_title.png" mode="aspectFit" />
+        <image class="title_image" src="{{ item.floor_title.image_src }}" mode="aspectFit" />
     
     </view>
 
     <view class="floor_wrap">
-        <image wx:for="{{ 5 }}" class="wrap_image" src="" />
-          
+        <image 
+        class="wrap_image"
+        wx:for="{{ item.product_list }}" 
+        wx:key="name"
+        wx:for-item="item2" 
+        src="{{item2.image_src}}" 
+        style="width:{{ item2.image_width }}rpx"
+        />         
     </view>
       
       
