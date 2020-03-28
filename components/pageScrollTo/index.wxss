@@ -1,16 +1,22 @@
-.toTop{
-    width: 81rpx;
-    height: 81rpx;
-    border-radius: 50%;
-    background-color: #eee;
-    color: #e1251b;
-    opacity: 0.8;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    right: 20rpx;
-    bottom: 20rpx;
-
+@import "../../styles/iconfont.wxss";
+.toTop {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background-color: #eee;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.toTop text {
+  color: #e1251b;
+  font-size: 24rpx;
+  font-weight: 700;
+  line-height: 24rpx;
+  height: 24rpx;
 }

@@ -1,4 +1,7 @@
 <view class="toTop" bindtap="toTop">
-    顶部
+    <text class="iconfont iconhuidingbu"></text>
+        
+    <text class="topText">顶部 </text>
+   
 </view>
   
