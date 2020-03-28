@@ -33,7 +33,7 @@
 <!-- 楼层 -->
 <view 
     wx:for="{{floorList}}" 
-    wx:key="floor_title"
+    wx:key="id"
     class="floor">
     <view class="floor_title">
         <image class="title_image" src="{{ item.floor_title.image_src }}" mode="aspectFit" />
@@ -44,7 +44,7 @@
         <image 
         class="wrap_image"
         wx:for="{{ item.product_list }}" 
-        wx:key="id"
+        wx:key="name"
         wx:for-item="item2" 
         src="{{item2.image_src}}" 
         style="width:{{ item2.image_width }}rpx"
