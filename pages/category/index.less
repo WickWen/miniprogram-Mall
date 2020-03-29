@@ -30,6 +30,43 @@
         flex: 1;
         background-color: #fff;
         height: calc(~'100vh - 100rpx');
+        // 标题
+        &_title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 18rpx 0 21rpx 0;
+            color: #575757;
+            font-weight: 700;
+            &::after,&::before{
+                content: '/';
+                color: #9C9C9C;
+                margin: 0 8rpx;
+            }
+        }
+        // 主题内容
+        &_main{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        // 每一项
+        .list_item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 33.33%;
+            padding: 30rpx 0;
+        }
+        // 商品图片
+        .list_image{
+            width: 120rpx;
+            height: 120rpx;
+        }
+        .list_text{
+            margin: 10rpx;
+            font-size: 22rpx;
+        }
     }
 
 }
