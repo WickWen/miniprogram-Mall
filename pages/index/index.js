@@ -126,10 +126,18 @@ Page({
     this.setData({
       swiperList: [],
       navList: [],
-      floorList: []
+      floorList: [],
+      showTop:false
     });
     console.log('用户下拉刷新');
     this.onLoad();
+  },
+
+  // 页面滚动触发事件的处理函数
+  onPageScroll({ scrollTop }) {
+    this.setData({
+      showTop:scrollTop>=300 ? true : false
+    })
   },
 
   /**

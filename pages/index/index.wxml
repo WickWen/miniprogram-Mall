@@ -58,7 +58,11 @@
     
 </view>
 <!-- 返回顶部组件 -->
-<pageScrollTo></pageScrollTo>
+<view hidden="{{!showTop}}">
+    <pageScrollTo></pageScrollTo>
+</view>
+  
+
   
 
 
