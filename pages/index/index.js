@@ -123,7 +123,13 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      swiperList: [],
+      navList: [],
+      floorList: []
+    });
+    console.log('用户下拉刷新');
+    this.onLoad();
   },
 
   /**
