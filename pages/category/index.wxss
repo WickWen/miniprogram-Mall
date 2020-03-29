@@ -1,1 +1,31 @@
-/* pages/category/index.wxss */
+.wrap {
+  display: flex;
+}
+.wrap .menu {
+  width: 182rpx;
+  background-color: #F3F3F3;
+  height: calc(100vh - 100rpx);
+}
+.wrap .menu_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.wrap .menu .active {
+  color: #EA4350;
+  position: relative;
+}
+.wrap .menu .active::before {
+  content: "";
+  width: 4rpx;
+  height: 43rpx;
+  background-color: currentColor;
+  position: absolute;
+  left: 0;
+}
+.wrap .productList {
+  flex: 1;
+  background-color: #fff;
+  height: calc(100vh - 100rpx);
+}

@@ -1,0 +1,35 @@
+.wrap{
+    display: flex;
+    // 左侧菜单栏
+    .menu{
+        width: 182rpx;
+        background-color: #F3F3F3;
+        height: calc(~'100vh - 100rpx');
+        &_item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20rpx 0; 
+        }
+        // 选中的样式
+        .active{
+            color: #EA4350;
+            position: relative;
+            &::before{
+                content: "";
+                width: 4rpx;
+                height: 43rpx;
+                background-color: currentColor;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+    // 商品详情
+    .productList{
+        flex: 1;
+        background-color: #fff;
+        height: calc(~'100vh - 100rpx');
+    }
+
+}

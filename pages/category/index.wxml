@@ -1,2 +1,23 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<!--搜索框组件-->
+<search></search>
+
+<!-- 商品分类 -->
+<view class="wrap">
+    <scroll-view scroll-y class="menu">
+        <view 
+            wx:for="{{24}}" 
+            wx::key="" 
+            class="menu_item {{ activeIndex === index ? 'active' : ''}}" >
+            大家电
+        </view>         
+    </scroll-view>
+
+    <scroll-view scroll-y class="productList">
+        <view class="list_item">
+            / 曲面电视 /
+        </view>
+          
+    </scroll-view>
+     
+</view>
+  
