@@ -8,6 +8,14 @@ Page({
     activeIndex: 0
 
   },
+  // 左侧点击改变选中状态的索引
+  changeTabIndex(e) {
+    const { index } = e.currentTarget.dataset;
+    // console.log(index);  
+    this.setData({
+      activeIndex: index
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

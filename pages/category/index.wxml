@@ -7,7 +7,9 @@
         <view 
             wx:for="{{24}}" 
             wx::key="" 
-            class="menu_item {{ activeIndex === index ? 'active' : ''}}" >
+            class="menu_item {{ activeIndex === index ? 'active' : ''}}"
+            bindtap="changeTabIndex"
+            data-index="{{ index }}" >
             大家电
         </view>         
     </scroll-view>
