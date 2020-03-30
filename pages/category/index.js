@@ -1,5 +1,8 @@
 import { axios } from '../../request/promise_axios'
 
+// 为了优化渲染性能, 设定一个存放所有的分类数据的变量
+let cateAll;
+
 Page({
 
   /**
@@ -16,7 +19,8 @@ Page({
     const { index } = e.currentTarget.dataset;
     // console.log(index);  
     this.setData({
-      activeIndex: index
+      activeIndex: index,
+      cateList:cateAll[index].children
     })
   },
 
@@ -26,7 +30,8 @@ Page({
   onLoad: function (options) {
     axios({ url: '/categories' })
       .then(res => {
-        console.log(res);
+        // console.log(res);
+        cateAll = res;
         const cateMenu = res.map(item => {
           return {
             cat_name: item.cat_name,
