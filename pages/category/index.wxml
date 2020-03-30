@@ -14,9 +14,13 @@
         </view>         
     </scroll-view>
 
-    <scroll-view scroll-y class="productList">
+    <scroll-view 
+        scroll-y 
+        scroll-top="{{ listScrollTop }}"
+        enable-back-to-top:true 
+        class="productList">
 
-        <block wx:for="{{cateList}}" wx:key="cat_id">
+        <block wx:for="{{cateList}}" wx:key="cat_id" wx:if="{{ item.children }}">
             <view class="productList_title">
                 {{item.cat_name}}
             </view>

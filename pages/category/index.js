@@ -10,6 +10,7 @@ Page({
    */
   data: {
     activeIndex: 0,
+    listScrollTop: 0,
     cateMenu: [],
     cateList: []
 
@@ -20,7 +21,9 @@ Page({
     // console.log(index);  
     this.setData({
       activeIndex: index,
-      cateList:cateAll[index].children
+      cateList: cateAll[index].children,
+      // 使得每次点击左侧菜单栏时都是显示顶部楼层数据
+      listScrollTop: 0
     })
   },
 
