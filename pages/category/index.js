@@ -1,11 +1,14 @@
-// pages/category/index.js
+import { axios } from '../../request/promise_axios'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activeIndex: 0
+    activeIndex: 0,
+    cateMenu: [],
+    cateList: []
 
   },
   // 左侧点击改变选中状态的索引
@@ -21,6 +24,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    axios({ url: '/categories' })
+      .then(res => {
+        console.log(res);
+        const cateMenu = res.map(item => {
+          return {
+            cat_name: item.cat_name,
+            cat_id: item.cat_id 
+          }
+        })
+        // const cateMenu = res.map(item =>({ cat_name: item.cat_name,cat_id: item.cat_id }))
+        // 默认右侧绑定的数据为数组的第一项
+        const cateList = res[0].children
+        this.setData({
+          cateMenu,
+          cateList
+      })
+    })
 
   },
 

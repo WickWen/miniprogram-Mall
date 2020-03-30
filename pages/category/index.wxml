@@ -5,33 +5,37 @@
 <view class="wrap">
     <scroll-view scroll-y class="menu">
         <view 
-            wx:for="{{24}}" 
-            wx::key="" 
+            wx:for="{{cateMenu}}" 
+            wx::key="cat_id" 
             class="menu_item {{ activeIndex === index ? 'active' : ''}}"
             bindtap="changeTabIndex"
             data-index="{{ index }}" >
-            大家电
+            {{ item.cat_name }}
         </view>         
     </scroll-view>
 
     <scroll-view scroll-y class="productList">
-        <view class="productList_title">
-            电视
-        </view>
-        
-        <view class="productList_main">
 
-            <navigator 
-                wx:for="{{12}}" 
-                wx:key="" 
-                class="list_item" 
-                url=""
-            >
-                <image class="list_image" src="" mode="aspectFill" />
-                <text class="">曲面电视</text>  
-            </navigator>
-        </view>
-              
+        <block wx:for="{{cateList}}" wx:key="cat_id">
+            <view class="productList_title">
+                {{item.cat_name}}
+            </view>
+            
+            <view class="productList_main">
+    
+                <navigator 
+                    wx:for="{{ item.children }}" 
+                    wx:for-item="item2" 
+                    wx:key="cat_id" 
+                    class="list_item" 
+                    url="/pages/search/index?cat_id={{ item2.cat_id }}"
+                >
+                    <image class="list_image" src="{{ item2.cat_icon }}" mode="aspectFill" />
+                    <text class="list_text">{{ item2.cat_name }}</text>  
+                </navigator>
+            </view>
+        </block>
+         
     </scroll-view>
      
 </view>
