@@ -65,7 +65,19 @@ Page({
     if (!cates) {
       this.getCateData()
     } else {
-      console.log(cates); 
+      // console.log(cates); 
+      if ( Date.now() - cates.time > 1000 * 60 * 5) {
+        this.getCateData();
+      } else {
+        cateAll = cates.data;
+        const cateMenu = cateAll.map(item =>({ cat_name: item.cat_name,cat_id: item.cat_id }))
+        const cateList = cateAll[0].children
+        this.setData({
+          cateMenu,
+          cateList
+        });
+        
+      }
     }
       
   },
