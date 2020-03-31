@@ -27,14 +27,11 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  // 封装 Axios请求 获取分类数据
+  getCateData(){
     axios({ url: '/categories' })
       .then(res => {
         // console.log(res);
-        cateAll = res;
         const cateMenu = res.map(item => {
           return {
             cat_name: item.cat_name,
@@ -47,9 +44,30 @@ Page({
         this.setData({
           cateMenu,
           cateList
-      })
-    })
+        });
 
+        cateAll = res;
+        // 获取数据成功后,把数据保存到本地存储 保存的时候添加一个time 属性,记录保存的时间
+        wx.setStorageSync('cates', { time: Date.now(), data: res });
+        
+      })    
+    
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    // 获取本地缓存是否有数据
+    const cates = wx.getStorageSync('cates');
+      
+    if (!cates) {
+      this.getCateData()
+    } else {
+      console.log(cates); 
+    }
+      
   },
 
   /**
