@@ -5,14 +5,37 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activeIndex: 0,
+    tabs: [
+      {
+        id: 0,
+        text:'综合'
+      },
+      {
+        id: 1,
+        text:'销量'
+      },
+      {
+        id: 2,
+        text:'价格'
+      }
+    ]
 
+  },
+  
+  // 切换 tabs 选项卡
+  changActiveIndex(e) {
+    const { index } = e.currentTarget.dataset;
+    this.setData({
+      activeIndex: index
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad (options) {
+    console.log(options);
   },
 
   /**

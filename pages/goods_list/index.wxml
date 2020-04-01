@@ -1,2 +1,21 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<!-- 搜索框 -->
+<search></search>
+
+<!-- 选项栏 -->
+<view class="tabs">
+    <view class="tabs_title">
+        <view 
+            wx:for="{{ tabs }}" 
+            wx:key="id" 
+            class="tabs_title_item {{activeIndex === index? 'active' : ''}}"
+            bindtap='changActiveIndex'
+            data-index="{{ index }}"
+            >
+            {{ item.text }}
+        </view>
+          
+        
+    </view>
+      
+</view>
+  

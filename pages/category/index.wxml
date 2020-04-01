@@ -32,7 +32,7 @@
                     wx:for-item="item2" 
                     wx:key="cat_id" 
                     class="list_item" 
-                    url="/pages/search/index?cat_id={{ item2.cat_id }}"
+                    url="/pages/goods_list/index?cat_id={{ item2.cat_id }}"
                 >
                     <image class="list_image" src="{{ item2.cat_icon }}" mode="aspectFill" />
                     <text class="list_text">{{ item2.cat_name }}</text>  
