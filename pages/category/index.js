@@ -1,4 +1,6 @@
 import { axios } from '../../request/promise_axios'
+// 兼容ES7 async await 语法
+import regeneratorRuntime from '../../libs/runtime/runtime';
 
 // 为了优化渲染性能, 设定一个存放所有的分类数据的变量
 let cateAll;
@@ -28,31 +30,27 @@ Page({
   },
 
   // 封装 Axios请求 获取分类数据
-  getCateData(){
-    axios({ url: '/categories' })
-      .then(res => {
-        // console.log(res);
-        const cateMenu = res.map(item => {
-          return {
-            cat_name: item.cat_name,
-            cat_id: item.cat_id 
-          }
-        })
-        // const cateMenu = res.map(item =>({ cat_name: item.cat_name,cat_id: item.cat_id }))
-        // 默认右侧绑定的数据为数组的第一项
-        const cateList = res[0].children
-        this.setData({
-          cateMenu,
-          cateList
-        });
+  async getCateData(){
+    const res = await axios({ url: '/categories' })
+    // console.log(res);
+    const cateMenu = res.map(item => {
+      return {
+        cat_name: item.cat_name,
+        cat_id: item.cat_id 
+      }
+    })
+    // const cateMenu = res.map(item =>({ cat_name: item.cat_name,cat_id: item.cat_id }))
+    // 默认右侧绑定的数据为数组的第一项
+    const cateList = res[0].children
+    this.setData({
+      cateMenu,
+      cateList
+    });
 
-        cateAll = res;
-        // 获取数据成功后,把数据保存到本地存储 保存的时候添加一个time 属性,记录保存的时间
-        wx.setStorageSync('cates', { time: Date.now(), data: res });
-        
-      })    
-    
-    
+    cateAll = res;
+    // 获取数据成功后,把数据保存到本地存储 保存的时候添加一个time 属性,记录保存的时间
+    wx.setStorageSync('cates', { time: Date.now(), data: res });
+           
   },
 
   /**
