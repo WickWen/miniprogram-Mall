@@ -18,16 +18,21 @@
 </view>
 
 <view class="goods_list">
-    <view wx:for="{{8}}" wx:key="" class="goods">
-        <image class="goods_image" src="//img14.360buyimg.com/n1/jfs/t1/109472/39/6702/169606/5e500deaE224a5132/94fd775c0a1c9d3a.jpg" mode="aspectFit" />
+    <view 
+        wx:for="{{ goodsList }}" 
+        wx:key="goods_id" 
+        wx:if="{{ item.goods_price }}" 
+        class="goods"
+        >
+        <image class="goods_image" src="{{ item.goods_small_logo || '/images/default.png' }}" mode="aspectFit" />
 
         <view class="goods_info">
             <view class="goods_name">
-                索尼（SONY）KD-85X8500G 85英寸 大屏4K超高清 HDR 智能网络 人工智能语音 安卓8.0
+                {{ item.goods_name }}
             </view>
 
             <view class="goods_price">
-                ¥18499.00
+                {{ item.goods_price }}  
             </view>    
         </view>
              

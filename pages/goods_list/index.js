@@ -1,4 +1,14 @@
-// pages/goods_list/index.js
+
+import { axios } from '../../request/promise_axios'
+import regeneratorRuntime from '../../libs/runtime/runtime';
+
+const params = {
+  query:'',
+  cid:'',
+  pagenum: 1,
+  pagesize:10
+}
+
 Page({
 
   /**
@@ -19,7 +29,8 @@ Page({
         id: 2,
         text:'价格'
       }
-    ]
+    ],
+    goodsList:[]
 
   },
   
@@ -30,12 +41,28 @@ Page({
       activeIndex: index
     })
   },
+  
+  // 获取商品列表数据
+  getGoodsList() {
+    axios({
+      url: '/goods/search',
+      data: params
+    }).then(res => {
+      this.setData({
+        goodsList: res.goods
+      })
+    })    
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
-    console.log(options);
+    // console.log(options);
+    params.cid = options.cat_id || '';  /* 传递分类id */
+    params.query = options.query || '';  /* 传递搜索关键词 */
+
+    this.getGoodsList();
   },
 
   /**

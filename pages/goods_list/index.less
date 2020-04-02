@@ -42,6 +42,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border-bottom: 1px #eee solid;
     }
     &_name{
         font-size: 24rpx;
@@ -52,7 +53,11 @@
         -webkit-box-orient: vertical
     }
     &_price{
-        font-size: 24rpx ;
+        font-size: 30rpx ;
         color: #EA4350;
+        &::before{
+            content: '¥';
+            font-size: 80%;
+        }
     }
 }
