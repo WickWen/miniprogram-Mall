@@ -50,7 +50,9 @@ Page({
     }).then(res => {
       this.setData({
         goodsList: res.goods
-      })
+      });
+      wx.stopPullDownRefresh()
+      // 停止当前页下拉刷新
     })    
   },
 
@@ -97,7 +99,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      goodsList: []
+    });
+    params.pagenum = 1;
+    // 请求参数中的页面重新变为第一页
+    this.getGoodsList()
   },
 
   /**
