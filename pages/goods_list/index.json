@@ -3,5 +3,6 @@
     "search":"/components/search/index"
   },
   "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
   "navigationBarTitleText": "商品列表"
 }

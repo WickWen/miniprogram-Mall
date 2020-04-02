@@ -8,6 +8,8 @@ const params = {
   pagenum: 1,
   pagesize:10
 }
+// 全局定义一个变量总条数
+let totalnum = 0;
 
 Page({
 
@@ -48,8 +50,9 @@ Page({
       url: '/goods/search',
       data: params
     }).then(res => {
+      totalnum = res.total;
       this.setData({
-        goodsList: res.goods
+        goodsList: [ ...this.data.goodsList, ...res.goods ]
       });
       wx.stopPullDownRefresh()
       // 停止当前页下拉刷新
@@ -111,7 +114,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (Math.ceil(totalnum/params.pagesize) > params.pagenum ) {
+      params.pagenum++;
+      this.getGoodsList()
+    } else {
+      wx.showToast({ title: '没有数据了',icon: 'loading', });
+    }
+     
   },
 
   /**
