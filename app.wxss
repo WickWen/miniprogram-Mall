@@ -5,6 +5,17 @@ image{
     background-color: #eee;
 }
 
+/* Css3 变量 */
+ page {
+  --MainColor: #EA4350;
+  --PrimaryColor: #409EFF;
+  --SuccessColor: #67C23A;
+  --WarningColor: #FCAA23;
+  --DangerColor: #F56C6C;
+  --PrimaryText: #303133;
+  --IconColor: #434343;
+}
+
 .container {
   height: 100%;
   display: flex;

@@ -1,2 +1,59 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<!--swiper组件-->
+<swiper 
+    class="goods_swiper" 
+    autoplay
+    circular
+    indicator-dots="true" 
+    indicator-color="rgba(0,0,0,.40)" 
+    indicator-active-color="#EA4350"
+>
+    <swiper-item wx:for="{{ 3 }}" wx:key="">
+        <image class="goods_swiper_image" src="" mode="aspectFit" />
+    </swiper-item>
+      
+</swiper>
+<!-- 商品信息 -->
+<view class="goodsInfo">
+    <view class="goodsInfo_head">
+        <view class="goodsInfo_head_price">
+            3999
+        </view>
+        <view class="goodsInfo_head_icon">
+            <view class="iconfont iconzhuanfa"></view>
+            <view class="iconfont iconchakantiezigengduoshoucang"></view>
+        </view>   
+    </view>
+
+    <view class="goodsInfo_main">
+        新奇士Sunkist美国进口橙子 脐橙 钻石大果2kg定制礼盒 (Sunkist&JD) 单果约190-240g 生鲜进口水果
+    </view>
+         
+</view>
+<!-- 图文详情 -->
+<view class="detail">
+    <view class="detail_title">
+        图文详情
+    </view>
+
+    <view class="detail_main">
+        
+    </view> 
+</view>
+<!-- 操作栏 -->
+<view class="operate">
+    <view class="operate_icon">
+        <view class="iconfont iconwebicon302"></view>
+        <view class="operate_icon_text">联系客服</view>    
+    </view>
+    <view class="operate_icon">
+        <view class="iconfont icongouwuche-copy"></view>
+        <view class="operate_icon_text">购物车</view>
+    </view>
+    <view class="operate_btn">加入购物车</view>
+    <view class="operate_btn">立即购买</view>
+</view>
+   
+  
+
+  
+

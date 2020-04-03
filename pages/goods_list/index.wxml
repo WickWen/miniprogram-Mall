@@ -18,11 +18,12 @@
 </view>
 
 <view class="goods_list">
-    <view 
+    <navigator 
         wx:for="{{ goodsList }}" 
         wx:key="goods_id" 
         wx:if="{{ item.goods_price }}" 
         class="goods"
+        url="/pages/goods_detail/index?goods_id={{ item.goods_id}}"
         >
         <image class="goods_image" src="{{ item.goods_small_logo || '/images/default.png' }}" mode="aspectFit" />
 
@@ -36,7 +37,7 @@
             </view>    
         </view>
              
-    </view>
+    </navigator>
       
 </view>
   

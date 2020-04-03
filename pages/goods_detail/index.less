@@ -1,0 +1,99 @@
+// 滑块视图容器
+.goods_swiper{
+    width: 100vw;
+    height: 100vw;
+    &_image{
+        width: 100vw;
+        height: 100vw;
+    }
+}
+
+// 商品信息
+.goodsInfo{
+    padding: 33rpx 19rpx 36rpx 48rpx;
+    &_head{
+        display: flex;
+        justify-content: space-between;
+        &_price{
+            font-size: 36rpx;
+            color: var(--MainColor);
+            &::before{
+                content: '¥';
+                font-size: 80%;
+            }
+        }
+        &_icon{
+            color: var(--IconColor);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .iconfont{
+                font-size: 40rpx;
+                margin: 0 15rpx;
+            }
+        }
+    }
+    &_main{
+        color: #434343;
+        font-size: 30rpx;
+        overflow: hidden;           
+        text-overflow: ellipsis;            
+        display: -webkit-box ;            
+        -webkit-line-clamp: 2;            
+        -webkit-box-orient: vertical
+    }
+}
+// 图文详情
+.detail{
+    margin-top: 20rpx;
+    &_title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20rpx 0;
+        color: #434343;
+        font-size: 28rpx;
+    }
+}
+// 操作栏
+.operate{
+    display: flex;
+    align-items: center;
+    background: #ccc;
+    border: 1px solid #DEDEDE;
+    position: fixed;
+    width: 100vw;
+    height: 94rpx;
+    left: 0;
+    bottom: 0;
+
+    &_icon{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 38rpx;
+        color: var(--IconColor);
+        &_text{
+            font-size: 24rpx;
+        }
+    }
+    &_btn{
+        width: 196rpx;
+        height: 60rpx;
+        border-radius: 30rpx;
+        color: #fff;
+        font-size: 26rpx;
+        background-color: var(--WarningColor);
+        &:last-child{
+            background-color: var(--MainColor);
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 17rpx 20rpx;
+
+    }
+
+}
