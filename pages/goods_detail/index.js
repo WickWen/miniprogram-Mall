@@ -22,8 +22,12 @@ Page({
       }
     })
     .then(res => {
-      let { pics, goods_price, goods_name, goods_introduce } = res
-      console.log(res);
+      let { pics, goods_price, goods_name, goods_introduce } = res;
+      const { system } = wx.getSystemInfoSync()
+      // console.log(system);
+      if ( system.toLowerCase().indexOf('ios') > -1 ) {
+        goods_introduce = goods_introduce.replace(/\?.+?webp/g, '');
+      }
       
       this.setData({
         pics,
