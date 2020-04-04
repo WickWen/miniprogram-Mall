@@ -12,6 +12,7 @@
 .goodsInfo_head {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 19rpx;
 }
 .goodsInfo_head_price {
   font-size: 36rpx;
@@ -25,7 +26,7 @@
   color: var(--IconColor);
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
 }
 .goodsInfo_head_icon .iconfont {
   font-size: 40rpx;
@@ -50,6 +51,11 @@
   padding: 20rpx 0;
   color: #434343;
   font-size: 28rpx;
+  font-weight: 700;
+}
+.detail_main {
+  font-size: 0;
+  padding-bottom: 120rpx;
 }
 .operate {
   display: flex;
@@ -61,6 +67,7 @@
   height: 94rpx;
   left: 0;
   bottom: 0;
+  opacity: 0.8;
 }
 .operate_icon {
   flex: 1;
