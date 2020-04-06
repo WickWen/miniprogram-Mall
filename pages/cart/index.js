@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    cart:[]
   },
 
   /**
@@ -25,7 +25,13 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
+  // tabBar页面不卸载,每次显示的时候获取本地存储最新数据
   onShow: function () {
+    const cart = wx.getStorageSync('cart') || [];
+    this.setData({
+      cart
+    })
+      
 
   },
 

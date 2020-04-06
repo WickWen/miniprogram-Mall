@@ -1,19 +1,19 @@
 
 <view class="cart_list">
-    <view class="cart_item">
+    <view class="cart_item" wx:for="{{ cart }}" wx:key="goods_id">
         
         <view class="cart_select">
             <!-- <icon class="" type="success" size="23" color="#E03440"></icon> -->
             <!-- <radio checked="{{false}}" color="#E03440"> </radio> -->
-            <view class="iconfont {{ true ? 'iconxuanzhong' : 'iconxuanze' }}"></view>
+            <view class="iconfont {{ item.current ? 'iconxuanzhong' : 'iconxuanze' }}"></view>
               
         </view>
 
         <view class="cart_info">
             <!-- 单个商品组件封装 -->
-            <goods_item />   
+            <goods_item item="{{ item }}" />   
             <view class="cart_count">
-                12
+                {{ item.number }}
             </view>
               
         </view>
