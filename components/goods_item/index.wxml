@@ -1,0 +1,16 @@
+
+<navigator class="goods" url="/pages/goods_detail/index?goods_id={{ item.goods_id}}">
+    
+        <image class="goods_image" src="{{ item.goods_small_logo || '/images/default.png' }}" mode="aspectFit" />
+
+        <view class="goods_info">
+            <view class="goods_name">
+                {{ item.goods_name }}
+            </view>
+
+            <view class="goods_price">
+                {{ item.goods_price }}  
+            </view>    
+        </view>
+             
+    </navigator>

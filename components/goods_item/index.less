@@ -1,0 +1,32 @@
+// 商品
+.goods{
+    display: flex;
+    padding: 40rpx 26rpx 26rpx 10rpx;
+    &_image{
+        width: 190rpx;
+        height: 190rpx;
+    }
+    &_info{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom: 1px #eee solid;
+    }
+    &_name{
+        font-size: 24rpx;
+        overflow: hidden;           
+        text-overflow: ellipsis;            
+        display: -webkit-box ;            
+        -webkit-line-clamp: 2;            
+        -webkit-box-orient: vertical
+    }
+    &_price{
+        font-size: 30rpx ;
+        color: #EA4350;
+        &::before{
+            content: '¥';
+            font-size: 80%;
+        }
+    }
+}

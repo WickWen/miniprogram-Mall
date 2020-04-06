@@ -1,0 +1,31 @@
+.goods {
+  display: flex;
+  padding: 40rpx 26rpx 26rpx 10rpx;
+}
+.goods_image {
+  width: 190rpx;
+  height: 190rpx;
+}
+.goods_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px #eee solid;
+}
+.goods_name {
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goods_price {
+  font-size: 30rpx ;
+  color: #EA4350;
+}
+.goods_price::before {
+  content: '¥';
+  font-size: 80%;
+}
