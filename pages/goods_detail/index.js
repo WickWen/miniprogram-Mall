@@ -1,6 +1,10 @@
 import { axios } from '../../request/promise_axios'
 
+// let goodsObj = {};
+
 Page({
+  // 自定义商品对象用于管理加入购物车的数据
+  goodsObj: {},
 
   /**
    * 页面的初始数据
@@ -35,6 +39,13 @@ Page({
         goods_name,
         goods_introduce
       })
+
+      this.goodsObj = {
+        goods_image:res.goods_small_logo,
+        goods_name,
+        goods_price,
+        goods_id
+      }
     })
   },
 
@@ -46,6 +57,28 @@ Page({
     wx.previewImage({
       current, // 当前显示图片的http链接
       urls    // 需要预览的图片http链接列表   格式 Array.<string>
+    })
+  },
+  
+  // 加入购物车
+  addCart() {
+    // console.log(this.goodsObj);
+    const cart = wx.getStorageSync('cart') || [];
+    const index = cart.findIndex(e => e.goods_id === this.goodsObj.goods_id)
+    if (index === -1) {
+      // 添加选中状态
+      this.goodsObj.current = true;
+      this.goodsObj.number = 1;
+      cart.unshift(this.goodsObj);
+    } else {
+      cart[index].number++;
+    }
+
+    wx.setStorageSync('cart', cart); 
+    wx.showToast({
+      title: '添加成功 ~',
+      icon: 'success',
+      mask:true
     })
   },
 

@@ -57,7 +57,7 @@
         <view class="iconfont icongouwuche-copy"></view>
         <view class="operate_icon_text">购物车</view>
     </view>
-    <view class="operate_btn">加入购物车</view>
+    <view class="operate_btn" bindtap="addCart">加入购物车</view>
     <view class="operate_btn">立即购买</view>
 </view>
    
