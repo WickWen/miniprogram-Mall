@@ -1,1 +1,25 @@
-/* pages/cart/index.wxss */
+.cart_item {
+  display: flex;
+}
+.cart_item .cart_select {
+  width: 105rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_item .cart_select .iconfont.iconxuanzhong {
+  color: var(--MainColor);
+}
+.cart_item .cart_select .iconfont.iconxuanze {
+  color: var(--IconColor);
+}
+.cart_item .cart_info {
+  flex: 1;
+  position: relative;
+}
+.cart_item .cart_info .cart_count {
+  position: absolute;
+  right: 40rpx;
+  bottom: 33rpx;
+  background-color: chartreuse;
+}
