@@ -81,6 +81,24 @@ Page({
       mask:true
     })
   },
+  
+  // 立即购买
+  buyNow() {
+    
+  },
+
+  // 跳转购物车页面
+  linkCart() {
+    wx.switchTab({
+      url: '/pages/cart/index',
+    });
+      
+  },
+
+  // 收藏
+  addCollect() {
+    
+  },
 
   /**
    * 生命周期函数--监听页面加载

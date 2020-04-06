@@ -27,6 +27,15 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  position: relative;
+}
+.goodsInfo_head_icon .infoShare {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 .goodsInfo_head_icon .iconfont {
   font-size: 40rpx;
@@ -77,6 +86,15 @@
   align-items: center;
   padding-left: 38rpx;
   color: var(--IconColor);
+  position: relative;
+}
+.operate_icon .online_btn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 38rpx;
+  top: 0;
+  opacity: 0;
 }
 .operate_icon_text {
   font-size: 24rpx;

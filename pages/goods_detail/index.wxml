@@ -24,8 +24,11 @@
             {{ goods_price }}
         </view>
         <view class="goodsInfo_head_icon">
-            <view class="iconfont iconzhuanfa"></view>
-            <view class="iconfont iconchakantiezigengduoshoucang"></view>
+            <view class="iconfont iconzhuanfa">
+                <button open-type="share" class="infoShare"></button>
+            </view>
+            <!-- 收藏 -->
+            <view class="iconfont iconchakantiezigengduoshoucang" bindtap="addCollect"></view>
         </view>   
     </view>
 
@@ -50,15 +53,16 @@
 <!-- 操作栏 -->
 <view class="operate">
     <view class="operate_icon">
+        <button open-type="contact" class="online_btn">客服按钮</button>
         <view class="iconfont iconwebicon302"></view>
         <view class="operate_icon_text">联系客服</view>    
     </view>
-    <view class="operate_icon">
+    <view class="operate_icon" bindtap="linkCart">
         <view class="iconfont icongouwuche-copy"></view>
         <view class="operate_icon_text">购物车</view>
     </view>
     <view class="operate_btn" bindtap="addCart">加入购物车</view>
-    <view class="operate_btn">立即购买</view>
+    <view class="operate_btn" bindtap="buyNow">立即购买</view>
 </view>
    
   
