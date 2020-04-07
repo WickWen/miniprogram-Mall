@@ -5,7 +5,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cart:[]
+    cart: [],
+    totalPrice: 0,
+    totalCound: 0,
+    selectAll: false
+  },
+  
+  // 购物车计算封装
+  cartComputed(cart) {
+    // 计算前初始化总金额和选中个数
+    let totalPrice = 0,
+        totalCound = 0,
+        selectAll = true;
+    cart.forEach(item => {
+      if (item.current) {
+        totalPrice += item.goods_price * item.number;
+        totalCound++;
+        // console.log(totalPrice,totalCound);     
+      } else {
+        selectAll = false;
+      }
+    });
+
+    // if (cart.length === 0) selectAll = false;
+    selectAll = !cart.length === 0 
+
+    this.setData({
+      totalPrice,totalCound,selectAll
+    })
   },
 
   /**
@@ -30,9 +57,11 @@ Page({
     const cart = wx.getStorageSync('cart') || [];
     this.setData({
       cart
-    })
-      
+    });
 
+    this.cartComputed(cart);
+    console.log(cart);
+    
   },
 
   /**
@@ -61,12 +90,7 @@ Page({
    */
   onReachBottom: function () {
 
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
+
+
 })

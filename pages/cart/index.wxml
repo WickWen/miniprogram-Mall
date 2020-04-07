@@ -5,7 +5,7 @@
         <view class="cart_select">
             <!-- <icon class="" type="success" size="23" color="#E03440"></icon> -->
             <!-- <radio checked="{{false}}" color="#E03440"> </radio> -->
-            <view class="iconfont {{ item.current ? 'iconxuanzhong' : 'iconxuanze' }}"></view>
+            <view class="iconfont {{ selectAll ? 'iconxuanzhong' : 'iconxuanze' }}"></view>
               
         </view>
 
@@ -39,12 +39,12 @@
         </view>
         <view class="tabBar_total">
             <text class="tabBar_total_txt">合计:</text>
-            <text class="tabBar_total_price">6999</text>        
+            <text class="tabBar_total_price">{{ totalPrice }}</text>        
         </view>               
     </view>
 
     <view class="tabBar_btn">
-        去结算(12)
+        去结算({{ totalCound }})
     </view>
 </view>
   

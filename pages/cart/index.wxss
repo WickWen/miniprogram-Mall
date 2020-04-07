@@ -85,6 +85,7 @@
 .tabBar_info .tabBar_total_price::before {
   content: '¥';
   font-size: 80%;
+  padding-right: 5rpx;
 }
 .tabBar_btn {
   min-width: 150rpx;
