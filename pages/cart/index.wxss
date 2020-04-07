@@ -1,3 +1,12 @@
+.iconfont {
+  font-size: 38rpx;
+}
+.iconfont.iconxuanzhong {
+  color: var(--MainColor);
+}
+.iconfont.iconxuanze {
+  color: var(--IconColor);
+}
 .cart_item {
   display: flex;
 }
@@ -7,12 +16,6 @@
   justify-content: center;
   align-items: center;
 }
-.cart_item .cart_select .iconfont.iconxuanzhong {
-  color: var(--MainColor);
-}
-.cart_item .cart_select .iconfont.iconxuanze {
-  color: var(--IconColor);
-}
 .cart_item .cart_info {
   flex: 1;
   position: relative;
@@ -20,6 +23,77 @@
 .cart_item .cart_info .cart_count {
   position: absolute;
   right: 40rpx;
-  bottom: 33rpx;
-  background-color: chartreuse;
+  bottom: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cart_item .cart_info .cart_count_btn {
+  display: flex;
+  line-height: 28rpx;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #8A8A8A;
+  width: 32rpx;
+  height: 32rpx;
+}
+.cart_item .cart_info .cart_count_number {
+  min-width: 60rpx;
+  padding: 0 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8A8A8A;
+}
+.tabBar {
+  height: 83rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  padding: 0 22rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #ccc;
+}
+.tabBar_info {
+  display: flex;
+  align-items: center;
+}
+.tabBar_info .tabBar_select {
+  display: flex;
+  align-items: center;
+}
+.tabBar_info .tabBar_select_txt {
+  padding: 0 36rpx 0 24rpx;
+  color: var(--PrimaryText);
+  font-size: 24rpx;
+}
+.tabBar_info .tabBar_total {
+  display: flex;
+  align-items: center;
+}
+.tabBar_info .tabBar_total_txt {
+  width: 78rpx;
+  font-size: 26rpx;
+}
+.tabBar_info .tabBar_total_price {
+  padding-left: 6rpx;
+  color: var(--MainColor);
+}
+.tabBar_info .tabBar_total_price::before {
+  content: '¥';
+  font-size: 80%;
+}
+.tabBar_btn {
+  min-width: 150rpx;
+  height: 52rpx;
+  background-color: var(--MainColor);
+  border-radius: 26rpx;
+  color: #fff;
+  font-size: 22rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

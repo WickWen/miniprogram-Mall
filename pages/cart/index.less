@@ -1,3 +1,15 @@
+// current-iconfont
+.iconfont{
+    font-size: 38rpx;
+    &.iconxuanzhong{
+        color: var(--MainColor);
+    }
+    &.iconxuanze{
+        color: var(--IconColor);
+    }
+}
+
+// 商品列表
 .cart_item{
     display: flex;
     .cart_select{
@@ -5,14 +17,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .iconfont{
-            &.iconxuanzhong{
-                color: var(--MainColor);
-            }
-            &.iconxuanze{
-                color: var(--IconColor);
-            }
-        }
     }
     .cart_info{
         flex: 1;
@@ -20,11 +24,89 @@
         .cart_count{
             position: absolute;
             right: 40rpx;
-            bottom: 33rpx;
-            background-color: chartreuse;
+            bottom: 40rpx;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &_btn{
+                display: flex;
+                line-height: 28rpx;
+                justify-content: center;
+                border-radius: 50%;
+                border: 1px solid #8A8A8A;
+                width: 32rpx;
+                height: 32rpx;
+            }
+            &_number{
+                min-width: 60rpx;
+                padding: 0 5rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #8A8A8A;
+            }
         }
     }
 
     
+
+}
+
+// tabbar
+.tabBar{
+    height: 83rpx;
+    position: fixed;
+    left: 0;
+    right: 0;
+    // width: 100vw;
+    // box-sizing: border-box;
+    bottom: 0;
+    display: flex;
+    padding: 0 22rpx;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1rpx solid #ccc;
+    &_info{
+        display: flex;
+        align-items: center;
+        .tabBar_select{
+            display: flex;
+            align-items: center;
+            &_txt{
+                padding: 0 36rpx 0 24rpx;
+                color: var(--PrimaryText);
+                font-size: 24rpx;
+            }
+        }
+        .tabBar_total{
+            display: flex;
+            align-items: center;
+            &_txt{
+                width: 78rpx;
+                font-size: 26rpx;
+            }
+            &_price{
+                padding-left: 6rpx;
+                color: var(--MainColor);
+                &::before{
+                    content: '¥';
+                    font-size: 80%;
+                }
+            }
+        }
+
+    }
+
+    &_btn{
+        min-width: 150rpx;
+        height: 52rpx;
+        background-color: var(--MainColor);
+        border-radius: 52rpx/2;
+        color: #fff;
+        font-size: 22rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 }

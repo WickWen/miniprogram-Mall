@@ -1,4 +1,4 @@
-
+<!-- 购物车列表 -->
 <view class="cart_list">
     <view class="cart_item" wx:for="{{ cart }}" wx:key="goods_id">
         
@@ -13,7 +13,15 @@
             <!-- 单个商品组件封装 -->
             <goods_item item="{{ item }}" />   
             <view class="cart_count">
-                {{ item.number }}
+                <view class="cart_count_btn">
+                    -
+                </view>
+                <view class="cart_count_number">
+                    {{ item.number }}
+                </view>
+                <view class="cart_count_btn">
+                    +
+                </view>
             </view>
               
         </view>
@@ -21,4 +29,23 @@
     </view>
       
 </view>
+
+<!-- tabBar -->
+<view class="tabBar">
+    <view class="tabBar_info">
+        <view class="tabBar_select">
+            <view class="iconfont {{ true ? 'iconxuanzhong' : 'iconxuanze' }}"></view>
+            <text class="tabBar_select_txt">全选</text>
+        </view>
+        <view class="tabBar_total">
+            <text class="tabBar_total_txt">合计:</text>
+            <text class="tabBar_total_price">6999</text>        
+        </view>               
+    </view>
+
+    <view class="tabBar_btn">
+        去结算(12)
+    </view>
+</view>
+  
   
