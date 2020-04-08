@@ -30,7 +30,7 @@ Page({
     if (cart.length === 0) selectAll = false;
 
     this.setData({
-      totalPrice,totalCound,selectAll
+      totalPrice,totalCound,selectAll,cart
     })
     // 更新本地存储数据
     wx.setStorageSync('cart', cart);
@@ -53,6 +53,15 @@ Page({
     });
     // 再从新计算选中状态的数据
     this.cartComputed(cart);
+  },
+
+  // 商品选中按钮点击
+  clickSelectItem(e) {
+    const { index } = e.currentTarget.dataset;
+    // console.log(index);
+    const { cart } = this.data;
+    cart[index].current = !cart[index].current;
+    this.cartComputed(cart)
   },
 
   /**
