@@ -33,8 +33,8 @@
 <!-- tabBar -->
 <view class="tabBar">
     <view class="tabBar_info">
-        <view class="tabBar_select">
-            <view class="iconfont {{ true ? 'iconxuanzhong' : 'iconxuanze' }}"></view>
+        <view class="tabBar_select" bindtap="clickSelectAll">
+            <view class="iconfont {{ selectAll ? 'iconxuanzhong' : 'iconxuanze' }}"></view>
             <text class="tabBar_select_txt">全选</text>
         </view>
         <view class="tabBar_total">

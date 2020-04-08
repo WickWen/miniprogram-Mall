@@ -27,12 +27,32 @@ Page({
       }
     });
 
-    // if (cart.length === 0) selectAll = false;
-    selectAll = !cart.length === 0 
+    if (cart.length === 0) selectAll = false;
 
     this.setData({
       totalPrice,totalCound,selectAll
     })
+    // 更新本地存储数据
+    wx.setStorageSync('cart', cart);
+  },
+
+  // 点击全选按钮
+  clickSelectAll() {
+    // 从页面数据中解构
+    let { selectAll, cart } = this.data;
+    selectAll = !selectAll;
+    // 改变购物车列表数据
+    cart.forEach(item => {
+      // 把购物车商品的选中状态改成全选状态
+      item.current = selectAll;
+    });
+    // 更新购物车视图
+    this.setData({
+      selectAll,
+      cart
+    });
+    // 再从新计算选中状态的数据
+    this.cartComputed(cart);
   },
 
   /**
