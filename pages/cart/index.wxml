@@ -13,13 +13,19 @@
             <!-- 单个商品组件封装 -->
             <goods_item item="{{ item }}" />   
             <view class="cart_count">
-                <view class="cart_count_btn">
+                <view class="cart_count_btn"
+                      bindtap="changeCount" 
+                      data-index="{{ index }}"
+                      data-number="{{-1}}">
                     -
                 </view>
                 <view class="cart_count_number">
                     {{ item.number }}
                 </view>
-                <view class="cart_count_btn">
+                <view class="cart_count_btn" 
+                      bindtap="changeCount"
+                      data-index="{{ index }}"
+                      data-number="{{ 1 }}">
                     +
                 </view>
             </view>

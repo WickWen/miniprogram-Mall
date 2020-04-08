@@ -46,11 +46,6 @@ Page({
       // 把购物车商品的选中状态改成全选状态
       item.current = selectAll;
     });
-    // 更新购物车视图
-    this.setData({
-      selectAll,
-      cart
-    });
     // 再从新计算选中状态的数据
     this.cartComputed(cart);
   },
@@ -62,6 +57,39 @@ Page({
     const { cart } = this.data;
     cart[index].current = !cart[index].current;
     this.cartComputed(cart)
+  },
+
+  // 改变商品数量
+  changeCount(e) {
+    const { index, number } = e.currentTarget.dataset;
+    console.log(index, number);
+    const { cart } = this.data;
+    // 当购物车数量 = 1 且 用户点 - 操作
+    if ( number === -1 && cart[index].number === 1 ) {
+      wx.showModal({
+        title: '提示',
+        content: '是否删除该商品',
+        showCancel: true,
+        cancelText: '取消',
+        cancelColor: '#000000',
+        confirmText: '删除',
+        confirmColor: '#F56C6C',
+        success: (result) => {
+          // console.log(result);
+          if (result.confirm) {
+            cart.splice(index, 1)  /* 删除完商品,更新购物车计算 */
+            this.cartComputed(cart)
+          }
+        }
+
+      });
+        
+    } else {
+      // 数据运算
+    cart[index].number += number; 
+    this.cartComputed(cart)
+    } 
+    
   },
 
   /**
